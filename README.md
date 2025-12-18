@@ -1,5 +1,5 @@
 # simple-systemd-services
-## Simple systemd services specifically meant for Arch Linux automation
+### Simple systemd services specifically meant for Arch Linux automation
 
 ## System Services
 (Coming Soon)
