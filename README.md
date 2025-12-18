@@ -16,9 +16,7 @@ Runs automatically after login and notifies you via desktop notification if pacm
 1. Prerequisites
 Install the required tools for checking updates safely and sending notifications:
 
-Bash
-
-sudo pacman -S pacman-contrib libnotify
+$ sudo pacman -S pacman-contrib libnotify
 
 
 2. Installation
@@ -27,28 +25,24 @@ Create the files in your user configuration directory:
 ~/.config/systemd/user/
 
 updates-notification.service
+~/.config/systemd/user/update-notify.service
 
 updates-notification.timer
-
+~/.config/systemd/user/update-notify.timer
 
 3. Activation
 Run these commands as your standard user (do not use sudo):
 
-Bash
-
 Reload daemon to recognize new files
-systemctl --user daemon-reload
+$ systemctl --user daemon-reload
 
 Enable and start the timer
-systemctl --user enable --now update-notify.timer
+$ systemctl --user enable --now update-notify.timer
 
 
 4. Verification
 You can force a test run immediately with:
-
-Bash
-
-systemctl --user start update-notify.service
+$ systemctl --user start update-notify.service
 
 How it Works
 User Scope: These run under your user session (systemctl --user), ensuring notifications appear on your specific display.
