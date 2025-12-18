@@ -1,0 +1,9 @@
+[Unit]
+Description=Check for Updates 1 Minute After Login
+
+[Timer]
+# Triggers 1 minute after you log in
+OnStartupSec=60
+
+[Install]
+WantedBy=timers.target
