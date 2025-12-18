@@ -1,10 +1,10 @@
-simple-systemd-services
-Simple systemd services specifically meant for Arch Linux automation.
+# simple-systemd-services
+# Simple systemd services specifically meant for Arch Linux automation.
 
-System Services
+# System Services
 (Coming Soon)
 
-User Services
+# User Services
 Update Notification Service
 Runs automatically after login and notifies you via desktop notification if pacman updates are available.
 
