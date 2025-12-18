@@ -4,8 +4,12 @@
 # System Services
 (Coming Soon)
 
+
+
 # User Services
-Update Notification Service
+
+
+# Update Notification Service
 Runs automatically after login and notifies you via desktop notification if pacman updates are available.
 
 
@@ -32,10 +36,10 @@ Run these commands as your standard user (do not use sudo):
 
 Bash
 
-# Reload daemon to recognize new files
+Reload daemon to recognize new files
 systemctl --user daemon-reload
 
-# Enable and start the timer
+Enable and start the timer
 systemctl --user enable --now update-notify.timer
 
 
