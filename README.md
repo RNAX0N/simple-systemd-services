@@ -1,28 +1,54 @@
-# simple-systemd-services
-Some Simple systemd Services (Specifically Meant for Arch Linux)
+simple-systemd-services
+Simple systemd services specifically meant for Arch Linux automation.
 
-# SYSTEM SERVICES
+System Services
+(Coming Soon)
 
-# USER SERVICES
-# UPDATE NOTIFICATION SERVICE
-*Runs at startup and informs the user if there are available pacman updates*
+User Services
+Update Notification Service
+Runs automatically after login and notifies you via desktop notification if pacman updates are available.
 
-Install Packages:
+
+1. Prerequisites
+Install the required tools for checking updates safely and sending notifications:
+
+Bash
+
 sudo pacman -S pacman-contrib libnotify
 
-Put the files at the following locations:
-~/.config/systemd/user/updates-notification.service
-~/.config/systemd/user/updates-notification.timer
 
-Run as standard user WITHOUT sudo:
+2. Installation
+Create the files in your user configuration directory:
+
+~/.config/systemd/user/
+
+updates-notification.service
+
+updates-notification.timer
+
+
+3. Activation
+Run these commands as your standard user (do not use sudo):
+
+Bash
+
+# Reload daemon to recognize new files
 systemctl --user daemon-reload
+
+# Enable and start the timer
 systemctl --user enable --now update-notify.timer
 
-You can test the service immediately with:
+
+4. Verification
+You can force a test run immediately with:
+
+Bash
+
 systemctl --user start update-notify.service
 
-User Service: These run under your user session (systemctl --user), ensuring notifications appear on your specific display.
+How it Works
+User Scope: These run under your user session (systemctl --user), ensuring notifications appear on your specific display.
 
-Safety: The script uses checkupdates (from pacman-contrib), which safely checks for updates without syncing the root database or requiring sudo.
+Safety: The script uses checkupdates (from pacman-contrib), which safely checks for updates without syncing the root database or requiring root privileges.
 
 Enjoy!
